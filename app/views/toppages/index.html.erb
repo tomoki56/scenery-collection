@@ -3,7 +3,9 @@
     <div class="cover-inner">
       <div class="cover-contents">
         <h1>風景をコレクションしよう</h1>
-        <a href="" class="btn btn-primary btn-lg">SCENERY COLLECTIONを始める</a>
+          <% unless logged_in? %>
+            <%= link_to 'SCENERY COLLECTIONを始める', signup_path, class: 'btn btn-primary btn-lg' %>
+          <% end %>
       </div>
     </div>
   </div>
