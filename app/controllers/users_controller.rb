@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:show]
   def show
     @user = User.find(params[:id])
+    @contents = @user.contents
+    @count_content = @user.contents.count
   end
 
   def new

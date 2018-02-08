@@ -1,0 +1,17 @@
+<% if contents %>
+  <div class="row">
+    <% contents.each do |content| %>
+      <div class="content">
+        <div class="col-md-3 col-sm-4 col-xs-12">
+          <div class="panel panel-default">
+            <div class="panel-heading text-center">
+            </div>
+            <div class="panel-body">
+              <p class="content-title"><%= link_to content.title, content %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

@@ -11,3 +11,7 @@ class ApplicationController < ActionController::Base
     end
   end
 end
+
+def counts(user)
+  @count_contents = user.contents.count
+end

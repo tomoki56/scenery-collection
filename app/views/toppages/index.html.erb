@@ -2,7 +2,7 @@
   <div class="cover">
     <div class="cover-inner">
       <div class="cover-contents">
-        <h1>風景をコレクションしよう</h1>
+        <h1>風景を都道府県別に</h1>
           <% unless logged_in? %>
             <%= link_to 'SCENERY COLLECTIONを始める', signup_path, class: 'btn btn-primary btn-lg' %>
           <% end %>
@@ -11,4 +11,4 @@
   </div>
 <% end %>
 
-<p>テスト</p>
+<%= render 'contents/contents', contents: @contents %>
