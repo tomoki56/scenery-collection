@@ -4,4 +4,8 @@ module UsersHelper
     size = options[:size]
     "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}&d=mm"
   end
+  
+  def prefecture_name(prefecture_id)
+    Prefecture.find_by(id: prefecture_id).try!(:name)
+  end
 end

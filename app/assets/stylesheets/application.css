@@ -87,3 +87,22 @@ p.content-title {
   border: none;
 }
 
+/* image */
+.image .panel-body {
+  height: 70px;
+}
+.image .panel-heading {
+  height: 400px;
+}
+.image .panel-heading img {
+  /*height: 100%;*/
+  /*max-width: 100%;*/
+}
+
+.frame img {
+  width: 100%;
+}
+
+
+
+

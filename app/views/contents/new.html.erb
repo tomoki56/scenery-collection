@@ -23,7 +23,10 @@
       
       <div class="form-group">
         <%= f.label :image, '画像' %>
+        <%= f.label :image %>
+        <%= image_tag @content.image.thumb.url if @content.image? %>
         <%= f.file_field :image %>
+        <%= f.hidden_field :image_cache %>
       </div>
 
       <%= f.submit '投稿する', class: 'btn btn-primary' %>

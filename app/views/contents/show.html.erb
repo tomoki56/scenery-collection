@@ -3,6 +3,11 @@
     <div class="image">
       <div class="panel panel-default">
         <div class="panel-heading text-center">
+          <% if @content.image? %>
+            <%= image_tag @content.image.url %>
+          <% else %>
+            <%= image_tag 'noimage.gif' %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -20,11 +25,11 @@
           </tr>
           <tr>
             <th>ユーザー</th>
-            <td><%= @content.user_id %></td>
+            <td><%= @content.user.name %></td>
           </tr>
           <tr>
             <th>都道府県</th>
-            <td><%= @content.prefecture_id %></td>
+            <td><%= prefecture_name(@content.prefecture_id) %></td>
           </tr>
           <tr>
             <th>説明</th>
@@ -33,10 +38,12 @@
         </table>
       </div>
     </div>
-    <div class="text-center text-muted">
-    　<p><%= link_to '編集する', edit_content_path(@content), class: 'btn btn-primary' %></p>
-　　　<p><%= link_to '削除する', @content, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-danger' %></p>
-　　</div>
+    <% if current_user?(@content.user) %>
+      <div class="text-center text-muted">
+      　<%= link_to '編集する', edit_content_path(@content), class: 'btn btn-primary' %>
+  　　　<%= link_to '削除する', @content, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-default' %>
+  　　</div>
+　　<% end %>
   </div>
 </div>
       

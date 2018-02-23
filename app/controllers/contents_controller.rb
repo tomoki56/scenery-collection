@@ -47,7 +47,7 @@ class ContentsController < ApplicationController
   private
 
   def content_params
-    params.require(:content).permit(:id, :title, :description, :prefecture_id, :image)
+    params.require(:content).permit(:title, :description, :prefecture_id, :image, :image_cache)
   end
   
   def correct_user
