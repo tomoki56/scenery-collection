@@ -3,11 +3,13 @@
     <div class="image">
       <div class="panel panel-default">
         <div class="panel-heading text-center">
+          <div class="show frame">
           <% if @content.image? %>
             <%= image_tag @content.image.url %>
           <% else %>
             <%= image_tag 'noimage.gif' %>
           <% end %>
+          </div>
         </div>
       </div>
     </div>
@@ -25,7 +27,7 @@
           </tr>
           <tr>
             <th>ユーザー</th>
-            <td><%= @content.user.name %></td>
+            <td><%= link_to @content.user.name, user_path(@content.user) %></td>
           </tr>
           <tr>
             <th>都道府県</th>
