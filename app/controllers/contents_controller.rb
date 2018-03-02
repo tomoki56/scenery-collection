@@ -36,7 +36,7 @@ class ContentsController < ApplicationController
   def destroy
     @content.destroy
     flash[:success] = '作品を削除しました。'
-    render 'toppages/index'
+    redirect_to root_url
   end
   
   def show

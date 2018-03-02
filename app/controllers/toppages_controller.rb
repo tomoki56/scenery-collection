@@ -1,5 +1,10 @@
 class ToppagesController < ApplicationController
   def index
-    @contents = Content.order('updated_at DESC')
+    @prefectures = Prefecture.all
+    if params[:search].present? && params[:search][:prefecture].present?
+      @contents = Content.where(prefecture_id: params[:search][:prefecture]).order('updated_at DESC')
+    else
+      @contents = Content.order('updated_at DESC')
+    end
   end
 end

@@ -7,8 +7,16 @@
             <%= link_to 'SCENERY COLLECTIONを始める', signup_path, class: 'btn btn-primary btn-lg' %>
           <% end %>
           <% else %>
-            
-            <input type="submit" name="commit" value="検索" class="btn btn-primary" >
+            <%= form_for(:search, url: root_path, html: { method: :get }) do |f| %>
+
+　　　　　　　<div class="form-search">
+                <%= f.collection_select :prefecture, @prefectures, :id, :name,
+                { include_blank: '全国', selected: ( params[:search] ? params[:search][:prefecture] : '' ) },
+                class: 'form-control' %>
+              </div>
+
+              <%= f.submit '検索', class: 'btn btn-primary' %>
+            <% end %>
           <% end %>
       </div>
     </div>

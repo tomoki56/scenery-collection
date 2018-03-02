@@ -43,10 +43,18 @@ footer {
   font-weight: bold;
   letter-spacing: 0.15em;
 }
+.form-search {
+  margin-top: -20px;
+  margin-bottom: 12px;
+}
+
 
 /* content */
 .content .panel-body {
   height: 70px;
+}
+.content .panel-body p {
+font-size: 130%;
 }
 .content .panel-heading {
   height: 250px;
@@ -96,7 +104,6 @@ p.content-title {
   max-height: 300px;
   margin: auto;
 }
-
 
 
 
